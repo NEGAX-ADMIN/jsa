@@ -106,4 +106,4 @@ echo "The rest of the files or directory will show up you go through with the ar
 echo "CTRL + D OR CTRL + C to cancel an operation in the sender"
 echo "==============================================="
 
-u
+echo " NEGA WISHES U GOOD LUCK "
