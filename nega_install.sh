@@ -40,6 +40,14 @@ echo "==============================================="
 echo "Step 3: Downloading Installer Zip File..."
 echo "==============================================="
 
+# Check if the install-LINUX.zip file exists
+if [ -f "install-LINUX.zip" ]; then
+  echo "File install-LINUX.zip exists. Deleting it..."
+  rm install-LINUX.zip
+  echo "install-LINUX.zip has been deleted."
+fi
+
+# Download the install-LINUX.zip file
 curl -O https://raw.githubusercontent.com/NEGAX-ADMIN/jsa/main/install-LINUX.zip
 
 chmod +x ./install-LINUX.zip
