@@ -47,6 +47,12 @@ if [ -f "install-LINUX.zip" ]; then
   echo "install-LINUX.zip has been deleted."
 fi
 
+if [ -f "NEGAX_SUPREME_1.5.12.zip" ]; then
+  echo "File NEGAX_SUPREME_1.5.12.zip exists. Deleting it..."
+  rm NEGAX_SUPREME_1.5.12.zip
+  echo "NEGAX_SUPREME_1.5.12.zip has been deleted."
+fi
+
 if [ -f "nega_install" ]; then
   echo "File nega_install exists. Deleting it..."
   rm ./nega_install
@@ -95,6 +101,7 @@ sudo unzip NEGAX_SUPREME_1.5.12.zip
 chmod +x ./nega
 
 read -p "Step 7 complete. Press Enter to finish the installation..."
+
 
 # Final step: Inform the user of the completion
 echo "==============================================="
