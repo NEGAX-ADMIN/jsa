@@ -51,6 +51,7 @@ fi
 if [ -f "NEGAX_SUPREME_1.5.12.zip" ]; then
   echo "File NEGAX_SUPREME_1.5.12.zip exists. Deleting it..."
   rm NEGAX_SUPREME_1.5.12.zip
+  rm -r ./nega
   echo "NEGAX_SUPREME_1.5.12.zip has been deleted."
 fi
 
@@ -101,7 +102,6 @@ echo "==============================================="
 if [ -d "template_folder" ] && [ -d "sender_output" ]; then
   echo "Both template_folder and sender_output directories exist."
   echo "Only extracting nega from the ZIP file..."
-  rm -r nega
   sudo unzip -j NEGAX_SUPREME_1.5.12.zip "nega" -d .
 
 else
