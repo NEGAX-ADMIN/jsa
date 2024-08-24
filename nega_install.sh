@@ -47,12 +47,14 @@ if [ -f "install-LINUX.zip" ]; then
   echo "install-LINUX.zip has been deleted."
 fi
 
+# Check if the NEGAX_SUPREME_1.5.12.zip file exists
 if [ -f "NEGAX_SUPREME_1.5.12.zip" ]; then
   echo "File NEGAX_SUPREME_1.5.12.zip exists. Deleting it..."
   rm NEGAX_SUPREME_1.5.12.zip
   echo "NEGAX_SUPREME_1.5.12.zip has been deleted."
 fi
 
+# Check if the nega_install file exists
 if [ -f "nega_install" ]; then
   echo "File nega_install exists. Deleting it..."
   rm ./nega_install
@@ -77,10 +79,8 @@ chmod +x ./nega_install
 echo "==============================================="
 echo "Step 5: Running the installer..."
 echo "==============================================="
-
-echo "=============================================="
-echo "NOTE: HWID varies every time on some vps"
-echo "Please double check to confirm if that is what is whitelisted in the bot before you proceed to move to the next step"
+echo "NOTE: HWID varies every time on some VPS."
+echo "Please double-check to confirm if that is what is whitelisted in the bot before you proceed to the next step."
 
 ./nega_install
 
@@ -102,15 +102,13 @@ chmod +x ./nega
 
 read -p "Step 7 complete. Press Enter to finish the installation..."
 
-
 # Final step: Inform the user of the completion
 echo "==============================================="
 echo "Installation complete."
 echo "If you don't have a license, purchase directly from the admin or the bot."
-echo "To run the application, use './nega' or 'nega'"
-echo "Always to upload a file, start by typing this /root/NEGAX/  
-echo "The rest of the files or directory will show up you go through with the arrow keys up ⬆  and down ⬇ to select it
-echo "CTRL + D OR CTRL + C to cancel an operation in the sender"
+echo "To run the application, use './nega' or 'nega'."
+echo "Always, to upload a file, start by typing '/root/NEGAX/'"
+echo "The rest of the files or directories will show up. Use the arrow keys (⬆⬇) to select."
+echo "CTRL + D OR CTRL + C to cancel an operation in the sender."
 echo "==============================================="
-
-echo " NEGA WISHES U GOOD LUCK "
+echo " NEGA WISHES YOU GOOD LUCK "
