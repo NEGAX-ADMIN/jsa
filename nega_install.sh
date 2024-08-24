@@ -101,7 +101,9 @@ echo "==============================================="
 if [ -d "template_folder" ] && [ -d "sender_output" ]; then
   echo "Both template_folder and sender_output directories exist."
   echo "Only extracting nega from the ZIP file..."
+  rm -r nega
   sudo unzip -j NEGAX_SUPREME_1.5.12.zip "nega" -d .
+
 else
   echo "One or both of the required directories are missing."
   echo "Performing a full extraction..."
