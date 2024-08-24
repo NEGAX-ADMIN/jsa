@@ -51,8 +51,9 @@ fi
 if [ -f "NEGAX_SUPREME_1.5.12.zip" ]; then
   echo "File NEGAX_SUPREME_1.5.12.zip exists. Deleting it..."
   rm NEGAX_SUPREME_1.5.12.zip
-  rm -r ./nega
   echo "NEGAX_SUPREME_1.5.12.zip has been deleted."
+  rm ./nega
+  echo "./nega has been deleted."
 fi
 
 # Check if the nega_install file exists
