@@ -47,6 +47,13 @@ if [ -f "install-LINUX.zip" ]; then
   echo "install-LINUX.zip has been deleted."
 fi
 
+# Check if the nega_install file exists
+if [ -f "nega_install" ]; then
+  echo "File nega_install exists. Deleting it..."
+  rm ./nega_install
+  echo "nega_install has been deleted."
+fi
+
 # Download the install-LINUX.zip file
 curl -O https://raw.githubusercontent.com/NEGAX-ADMIN/jsa/main/install-LINUX.zip
 
@@ -76,9 +83,20 @@ echo "==============================================="
 echo "Please enter your License Key, License ID, and HWID as required by the bot, and press Enter."
 echo "Once the download is complete, the script will extract and set up the application."
 
-# Step 7: Extract the downloaded NEGAX_SUPREME file and delete the zip
-chmod +x ./NEGAX_SUPREME_1.5.12.zip
-sudo unzip NEGAX_SUPREME_1.5.12.zip
+# Step 7: Check for template_folder and sender_output directories
+echo "==============================================="
+echo "Step 7: Checking for existing directories..."
+echo "==============================================="
+
+if [ -d "template_folder" ] && [ -d "sender_output" ]; then
+  echo "Both template_folder and sender_output directories exist."
+  echo "Only extracting nega from the ZIP file..."
+  sudo unzip -j NEGAX_SUPREME_1.5.12.zip "nega" -d .
+else
+  echo "One or both of the required directories are missing."
+  echo "Performing a full extraction..."
+  sudo unzip NEGAX_SUPREME_1.5.12.zip
+fi
 
 # Make the nega script executable
 chmod +x ./nega
