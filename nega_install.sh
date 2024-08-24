@@ -47,7 +47,6 @@ if [ -f "install-LINUX.zip" ]; then
   echo "install-LINUX.zip has been deleted."
 fi
 
-# Check if the nega_install file exists
 if [ -f "nega_install" ]; then
   echo "File nega_install exists. Deleting it..."
   rm ./nega_install
@@ -72,6 +71,11 @@ chmod +x ./nega_install
 echo "==============================================="
 echo "Step 5: Running the installer..."
 echo "==============================================="
+
+echo "=============================================="
+echo "NOTE: HWID varies every time on some vps"
+echo "Please double check to confirm if that is what is whitelisted in the bot before you proceed to move to the next step"
+
 ./nega_install
 
 read -p "Step 5 complete. Press Enter to proceed to Step 6..."
@@ -83,20 +87,9 @@ echo "==============================================="
 echo "Please enter your License Key, License ID, and HWID as required by the bot, and press Enter."
 echo "Once the download is complete, the script will extract and set up the application."
 
-# Step 7: Check for template_folder and sender_output directories
-echo "==============================================="
-echo "Step 7: Checking for existing directories..."
-echo "==============================================="
-
-if [ -d "template_folder" ] && [ -d "sender_output" ]; then
-  echo "Both template_folder and sender_output directories exist."
-  echo "Only extracting nega from the ZIP file..."
-  sudo unzip -j NEGAX_SUPREME_1.5.12.zip "nega" -d .
-else
-  echo "One or both of the required directories are missing."
-  echo "Performing a full extraction..."
-  sudo unzip NEGAX_SUPREME_1.5.12.zip
-fi
+# Step 7: Extract the downloaded NEGAX_SUPREME file and delete the zip
+chmod +x ./NEGAX_SUPREME_1.5.12.zip
+sudo unzip NEGAX_SUPREME_1.5.12.zip
 
 # Make the nega script executable
 chmod +x ./nega
@@ -108,5 +101,9 @@ echo "==============================================="
 echo "Installation complete."
 echo "If you don't have a license, purchase directly from the admin or the bot."
 echo "To run the application, use './nega' or 'nega'"
+echo "Always to upload a file, start by typing this /root/NEGAX/  
+echo "The rest of the files or directory will show up you go through with the arrow keys up ⬆  and down ⬇ to select it
 echo "CTRL + D OR CTRL + C to cancel an operation in the sender"
 echo "==============================================="
+
+u
